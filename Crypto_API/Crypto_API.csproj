@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Ressources\1.png" />
+    <None Remove="Ressources\Font\The-Winter.ttf" />
+    <None Remove="Ressources\Image\DowloadPDF.gif" />
+    <None Remove="Ressources\Image\imprimante.png" />
+    <None Remove="Ressources\Image\Intro.gif" />
+    <None Remove="Ressources\Image\Introfall.gif" />
+    <None Remove="Ressources\Image\remplissage.gif" />
+    <None Remove="Ressources\Image\sauvegarder.png" />
+    <None Remove="Ressources\Image\wallpaperAloha.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Polly" Version="3.7.301.32" />
+    <PackageReference Include="itextsharp.xmlworker" Version="5.5.13.3" />
+    <PackageReference Include="MaterialDesignColors" Version="2.1.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ressources\Font\The-Winter.ttf" />
+    <Resource Include="Ressources\Image\1.png" />
+    <Resource Include="Ressources\Image\DowloadPDF.gif" />
+    <Resource Include="Ressources\Image\Intro.gif" />
+    <Resource Include="Ressources\Image\Introfall.gif" />
+    <Resource Include="Ressources\Image\remplissage.gif" />
+    <Resource Include="Ressources\Image\sauvegarder.png" />
+    <Resource Include="Ressources\Image\wallpaperAloha.png" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties ressources_4userdata_1json__JsonSchema="https://geojson.org/schema/GeoJSON.json" /></VisualStudio></ProjectExtensions>
+
+</Project>

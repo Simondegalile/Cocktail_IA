@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Police">../../Ressources/Font/The-Winter.ttf#The Winter</FontFamily>
+
+    <Style TargetType="{x:Type Border}" x:Key="BorderTitle">
+        <!--style pour tout les TextBoxes-->
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="CornerRadius" Value="7"/>
+    </Style>
+
+    <Style TargetType="{x:Type Label}">
+        <!--style pour tout les Labels-->
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="50"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{StaticResource Police}"/>
+    </Style>
+
+         
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="#3E3045"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10"/>
+
+            </Style>
+        </Style.Resources>
+
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="#3E3045"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="#3E3045"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    
+
+    <Style TargetType="{x:Type PasswordBox}">
+        <Setter Property="Background" Value="#3E3045"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="#3E3045"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

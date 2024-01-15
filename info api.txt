@@ -1,0 +1,4 @@
+api cocktail : https://www.thecocktaildb.com/api.php
+site api : - https://rapidapi.com/collection/list-of-free-apis
+	   - https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
+	   - https://apipheny.io/free-api/

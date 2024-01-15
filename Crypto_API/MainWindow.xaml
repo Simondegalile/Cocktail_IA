@@ -1,0 +1,145 @@
+﻿<Window x:Class="Crypto_API.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto_API"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        Title="MainWindow" Height="675" Width="1680"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="#231b27">
+    <Grid >
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0" Name="Window_containers">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Titre-->
+                <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource BorderTitle}" Background="#3E3045" >
+                    <Border  Style="{StaticResource BorderTitle}" Background="#7F5893">
+                        <StackPanel>
+                            <Label Name ="Menu" Content="Makes Yours Cocktails" FontSize="70">
+                                <Label.Effect>
+                                    <DropShadowEffect BlurRadius="4" Opacity="0.25" ShadowDepth="4"/>
+                                </Label.Effect>
+                            </Label>
+                        </StackPanel>
+                    </Border>
+                </Border>
+
+                <!--Image -->
+                <Image Name="Menu_photo" Grid.Column="0" Grid.Row="1"
+                       RenderOptions.BitmapScalingMode="Fant"
+                       Source = "Ressources/Image/WallpaperAloha.png"/>
+
+                <!--LOGIN-->
+                <Grid Grid.Column="1" Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Login" VerticalAlignment="Top" Grid.Row="0"/>
+                    <StackPanel Grid.Row="4">
+                        <Grid
+                            Width="250" Height="80">
+                            <Button
+                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                            materialDesign:ButtonProgressAssist.Value="-1"
+                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                            Content="Login" Foreground="White" FontSize="20"
+                            Margin="2,0"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="Login_Click" Cursor="Hand" />
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1">
+                        <TextBox x:Name="Tb_Info_UserName"
+                            materialDesign:HintAssist.Hint="User Name"
+                            materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                            materialDesign:HintAssist.FloatingScale="0.50"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            FontSize="30" Width="400" Foreground="white" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="0" Grid.Row="2">
+                        <!--Mot de passe relié au info de UserData-->
+                        <PasswordBox x:Name="PWB_Info_Password"
+                            Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"
+                            IsEnabled="{Binding ElementName=RevealPasswordFloatingEnabled, Path=IsChecked}"
+                            materialDesign:PasswordBoxAssist.Password="{Binding Password2, Mode=TwoWay}"
+                            materialDesign:HintAssist.Hint="Password" 
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            materialDesign:HintAssist.HelperText="If you have forgotten your password make a request on +33 7 89 24 05 77" 
+                            FontSize="30" Width="400" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--#region Navigation Menu-->
+        <Grid Grid.Column="1" Name="Gr_bpMenu" Background="#001442">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+
+            <!--Gif Cocktail-->
+            <Image gif:ImageBehavior.RepeatBehavior="5000x" gif:ImageBehavior.AnimatedSource="../Ressources/Image/Intro.gif"/>
+
+            <!--Button Cocktails-->
+            <StackPanel Grid.Row="1">
+                <Button Name ="BP_cocktails" 
+                Click="cocktails_Click"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                materialDesign:ButtonProgressAssist.Value="-1"
+                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                Content="Shearch yours Cocktail"
+                Margin="3,0" FontSize="20"
+                IsEnabled="False" Height="50" Cursor="Hand"/>
+            </StackPanel>
+
+            <!--Button Logine-->
+            <StackPanel Grid.Row="2" >
+                <Button Name ="BP_Login"
+                Click="Logine_Click" FontSize="20"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                materialDesign:ButtonProgressAssist.Value="-1"
+                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                Content="Login"
+                Margin="3,0"
+                IsEnabled="False" Cursor="Hand" Height="50" />
+            </StackPanel>
+        <!--#endregion-->
+        </Grid>
+    </Grid>
+</Window>
